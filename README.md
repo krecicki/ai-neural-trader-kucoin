@@ -1,4 +1,4 @@
-#Intro to the Neural Trader Python Application
+# Intro to the Neural Trader Python Application
 Neural Trader App is a powerful tool that helps you trade Bitcoin on the Kucoin exchange using
 machine learning. The app connects to the Kucoin API using the ccxt library and retrieves realtime
 data on the current market price of Bitcoin. It then uses a neural network model to predict
@@ -51,7 +51,7 @@ also use any cryptocurrency pair you’d like to use, refer to the ccxt document
 to print a response of exchanges and the cryptocurrencies you can trade.
 User Guide Page ￼2 of ￼8 Cody Krecicki
 
-#How to Setup
+# How to Setup
 If the bot is going to trade the BTC/USDT pair, you can use any pair, make sure the have the
 second part of the pair or the first part available. It needs to have USDT in the account in order
 to initiate a buy order of bitcoin and if you hold bitcoin it will sell it instead when you start the
@@ -71,15 +71,16 @@ file from now on forward unless you want to create a new model based on a new ti
 don't know if this is necessary but this is how you should go about it when training on new time
 frames.
 
-##These are the time frame you can use for KuCoin:
+## These are the time frame you can use for KuCoin:
 {'1m': '1min', '3m': '3min', '5m': '5min', '15m': '15min', '30m': '30min', '1h': '1hour', '2h': '2hour',
 '4h': '4hour', '6h': '6hour', '8h': '8hour', '12h': '12hour', '1d': '1day', '1w': ‘1week’}
 User Guide Page ￼3 of ￼8 Cody Krecicki
 
-##User Guide for learn.py
-This script is a trading bot that uses a machine learning model to predict the direction of the
+
+## This script is a trading bot that uses a machine learning model to predict the direction of the
 market (bullish or bearish) and makes trades accordingly.
-The script begins by importing several modules:
+
+### The script begins by importing several modules:
 - ccxt is a library for interacting with cryptocurrency exchanges
 - time is a built-in Python library for working with time
 - numpy is a library for working with arrays and numerical data
@@ -109,7 +110,7 @@ specified symbol and time frame. This data is used to train the machine learning
 Next, the script defines a function called predict_market_direction that takes the OHLCV data as
 an input and returns a prediction for the market direction (0 for bullish, 1 for bearish).
 
-##This function does the following:
+### This function does the following:
 - Extracts the features and target variable from the data
 - Specifies the values for the hyperparameters that the script wants to tune
 - Creates a neural network model using the MLPClassifier class from sklearn
@@ -122,8 +123,8 @@ find the best combination
 - Makes a prediction using the trained model and the most recent OHLCV data
 User Guide Page ￼4 of ￼8 Cody Krecicki
 
-After the predict_market_direction function is defined, the script enters another infinite loop.
-Inside this loop, the script does the following:
+## After the predict_market_direction function is defined, the script enters another infinite loop.
+### Inside this loop, the script does the following:
 - Fetches the current ticker information for the symbol
 - Checks the following:
 - The current bid and ask prices for the symbol
@@ -139,7 +140,6 @@ an error occurs during the execution of the script, the except block will handle
 an error message to the console.
 User Guide Page ￼5 of ￼8 Cody Krecicki
 
-#User Guide for main.py
 This script is a trading bot that uses machine learning to predict the direction of the market and
 makes trades accordingly on the KuCoin exchange. The bot is built using the ccxt library, which
 allows it to interact with the KuCoin API, and the sklearn library, which provides machine
@@ -160,9 +160,10 @@ current bid and ask prices. If the prediction is bearish (indicating a downward 
 market), the bot will place a limit sell order at a price that is slightly higher than the current bid
 price, with a premium added to account for the trading fee.
 
-The script also includes some error handling and sleep statements to ensure that it continues to
+## The script also includes some error handling and sleep statements to ensure that it continues to
 run smoothly and does not make too many requests to the exchange in a short period of time.
-The first part of the script imports the necessary libraries:
+
+### The first part of the script imports the necessary libraries:
 - The ccxt library is used to interact with various cryptocurrency exchanges. In this case, it
 is used to communicate with the KuCoin exchange.
 - The time library is used to pause the script for a certain amount of time using the sleep()
@@ -231,12 +232,14 @@ data, which is the list of candlestick data points that was fetched from the exc
 model_file, which is the name of the file that will be used to save and load the model.
 - The features variable is set to an array of the open, high, low, and close values from the
 data argument. The target variable
+
 The predict_market_direction() function loads the machine learning model from the model_file,
 updates it with the new data using the partial_fit() method, and then saves the updated model
 back to the model_file. It then uses the updated model to make a prediction about the market
 direction based on the most recent data point in the data argument. If the prediction is 0, the
 market is considered to be bullish (indicating an upward trend), and if the prediction is 1, the
 market is considered to be bearish (indicating a downward trend).
+
 The script then enters another infinite loop, in which it continuously checks the current market
 conditions and makes trades based on the prediction of the market direction.
 - The script enters another infinite loop using the while True statement. This means that the
