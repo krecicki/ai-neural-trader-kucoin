@@ -1,0 +1,10 @@
+[Unit]
+Description=tradeservice
+
+[Service]
+Environment=PATH=/var/www/html/tradingbot/bin:$PATH
+ExecStart=/bin/bash -c "source /var/www/html/tradingbot/bin/activate && python3 /var/www/html/main.py"
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
