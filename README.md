@@ -74,7 +74,7 @@ frames.
 ## These are the time frame you can use for KuCoin:
 {'1m': '1min', '3m': '3min', '5m': '5min', '15m': '15min', '30m': '30min', '1h': '1hour', '2h': '2hour',
 '4h': '4hour', '6h': '6hour', '8h': '8hour', '12h': '12hour', '1d': '1day', '1w': ‘1week’}
-User Guide Page ￼3 of ￼8 Cody Krecicki
+
 
 
 ## This script is a trading bot that uses a machine learning model to predict the direction of the
